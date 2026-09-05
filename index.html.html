@@ -1,0 +1,424 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Rooted Wellness | Sound Healing</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1f1924",
+                        "secondary-fixed-dim": "#cbc6bb",
+                        "secondary-fixed": "#e7e2d6",
+                        "on-tertiary-fixed-variant": "#4b4450",
+                        "outline-variant": "#cac6bb",
+                        "primary-fixed-dim": "#cbc7af",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#dad6bd",
+                        "tertiary-fixed": "#eadfee",
+                        "surface-container": "#f1ede9",
+                        "surface-container-high": "#ebe7e4",
+                        "on-primary-fixed": "#1d1c0c",
+                        "surface-dim": "#ddd9d6",
+                        "surface-container-highest": "#e6e2de",
+                        "on-secondary-fixed": "#1d1c15",
+                        "on-background": "#1c1c19",
+                        "surface": "#fdf9f5",
+                        "primary-container": "#5f5d49",
+                        "outline": "#79776d",
+                        "inverse-on-surface": "#f4f0ec",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#49424e",
+                        "surface-variant": "#e6e2de",
+                        "on-tertiary-container": "#dcd1e0",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#49473e",
+                        "on-surface": "#1c1c19",
+                        "tertiary-container": "#615966",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#e7e2d6",
+                        "on-surface-variant": "#48473e",
+                        "inverse-surface": "#31302e",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#615f4b",
+                        "tertiary-fixed-dim": "#cec3d2",
+                        "surface-container-low": "#f7f3ef",
+                        "secondary": "#615e55",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#cbc7af",
+                        "primary": "#474533",
+                        "on-secondary-container": "#67645b",
+                        "background": "#fdf9f5",
+                        "surface-bright": "#fdf9f5",
+                        "on-primary-fixed-variant": "#494735",
+                        "primary-fixed": "#e7e3ca",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "gutter": "32px",
+                        "section-padding-desktop": "120px",
+                        "section-padding-mobile": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-md": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "body-lg": ["DM Sans"],
+                        "headline-md": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: translateY(0); }
+            50% { opacity: .5; transform: translateY(10px); }
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+        .scrim-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.7) 100%);
+        }
+        .vignette {
+            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.3) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<main>
+<!-- Cinematic Hero Section -->
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+<!-- Video/Image Background Container -->
+<div class="absolute inset-0 z-0" style="background-color: #302f1e;">
+<!-- ADD VIDEO URL HERE -->
+<video autoplay="" class="absolute inset-0 w-full h-full object-cover" loop="" muted="" playsinline="">
+<source src="https://res.cloudinary.com/m6uwevm8/video/upload/q_auto:eco/IMG_6384_1_1_1_t6phmg.mp4" type="video/mp4">
+</video>
+<!-- Scrim & Vignette -->
+<div class="absolute inset-0 scrim-overlay z-10"></div>
+<div class="absolute inset-0 vignette z-10"></div>
+</div>
+<!-- Hero Content -->
+<div class="relative z-20 text-center px-gutter max-w-4xl mx-auto flex flex-col items-center">
+<img alt="Rooted Wellness logo" class="w-24 md:w-32 h-auto mb-6" src="Picture/logo-white.png">
+<span class="font-body-md text-white/70 uppercase tracking-[0.35em] text-xs mb-4">Sound Healing</span>
+<h1 class="font-display-lg text-5xl md:text-display-lg text-white mb-6 leading-tight">
+                Rooted <span class="italic font-light">Wellness</span>
+</h1>
+<p class="text-white/90 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+                Restore balance. Release stress. Reconnect with yourself through the power of intentional sound.
+            </p>
+<a class="inline-block bg-white text-[#474533] px-10 py-4 rounded-full font-label-sm text-xs tracking-[0.2em] uppercase hover:bg-white/90 transition-all duration-300" href="https://wa.me/919272406156?text=Hi%20Maneesha!%20I%27d%20like%20to%20book%20a%20sound%20healing%20session." rel="noopener" target="_blank">
+                Book a Session
+            </a>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-pulse-slow">
+<span class="material-symbols-outlined text-white text-3xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- Why Sound Healing? -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter max-w-container-max mx-auto fade-in-section visible">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="relative group order-2 md:order-1">
+<div class="absolute -inset-4 bg-primary-fixed-dim/20 rounded-xl blur-2xl transition-all duration-500"></div>
+<img alt="Maneesha with sound healing instruments" class="relative rounded-xl shadow-2xl w-full h-[500px] object-cover object-[center_35%]" src="Picture/sound.jpeg">
+</div>
+<div class="space-y-8 order-1 md:order-2">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Why Sound Healing?</h2>
+<div class="space-y-6 text-secondary leading-relaxed text-body-lg">
+<p class="">Sound healing is an ancient therapeutic practice that uses different frequencies and vibrations to improve physical, emotional, and mental well-being.</p>
+<p class="">When these vibrations travel through the body, they help break up energetic blockages, promote cellular healing, and shift the brain from a state of active stress (Beta waves) to a state of deep relaxation and meditation (Alpha and Theta waves).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits of Sound Healing -->
+<section class="bg-surface-container py-section-padding-mobile md:py-section-padding-desktop px-gutter py-32">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Benefits of Sound Healing</h2>
+<p class="text-secondary">Transformative results for mind and body.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+    <div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 bg-surface-container-high">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Deep Relaxation</h4>
+        <p class="text-secondary text-body-md">Experience a profound state of rest as sound frequencies slow down brain waves and release physical tension.</p>
+    </div>
+    <div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 bg-surface-container-low">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Better Sleep</h4>
+        <p class="text-secondary text-body-md">Calm the mind and regulate your internal clock, making it easier to fall asleep and stay in a deep, restorative state.</p>
+    </div>
+    <div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 bg-surface-container-high">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Reduced Anxiety</h4>
+        <p class="text-secondary text-body-md">Lower cortisol levels and quiet the 'fight or flight' response through soothing, harmonic vibrations.</p>
+    </div>
+    <div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 bg-surface-container-low">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Mental Clarity</h4>
+        <p class="text-secondary text-body-md">Clear energetic blockages and mental fog, allowing for improved focus, creativity, and emotional processing.</p>
+    </div>
+    <div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 md:col-span-2 lg:col-span-1 bg-surface-container-high">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Nervous System Regulation</h4>
+        <p class="text-secondary text-body-md">Gently retrain your nervous system to return to a state of safety and equilibrium after periods of high stress.</p>
+    </div>
+<div class="p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-all duration-300 bg-surface-container-low">
+        <h4 class="font-headline-md text-xl text-primary mb-4">Sense of Grounding</h4>
+        <p class="text-secondary text-body-md">Feeling of being calm, present, and connected to yourself.</p>
+    </div></div></div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-padding-mobile overflow-hidden bg-background">
+<div class="max-w-container-max mx-auto px-gutter mb-12 text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Gallery</h2>
+</div>
+<div class="animate-marquee">
+<div class="flex gap-4 px-2"><img alt="Sound healing session" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/yogi.jpeg"><img alt="Maneesha with singing bowls" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/first.jpeg"><img alt="Sound healing instruments" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/baner.jpeg"><img alt="Sound healing session with singing bowls" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/bowl.jpeg"><img alt="Maneesha conducting a sound bath" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/chime.jpeg"><img alt="Close up of sound healing instruments" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/private.jpeg"></div>
+<!-- Duplicated for marquee loop -->
+<div class="flex gap-4 px-2"><img alt="Sound healing session" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/yogi.jpeg"><img alt="Maneesha with singing bowls" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/first.jpeg"><img alt="Sound healing instruments" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/baner.jpeg"><img alt="Sound healing session with singing bowls" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/bowl.jpeg"><img alt="Maneesha conducting a sound bath" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/chime.jpeg"><img alt="Close up of sound healing instruments" class="h-80 w-[400px] object-cover rounded-xl shadow-sm" src="Picture/private.jpeg"></div>
+</div>
+</section>
+<!-- Who Can Do Sound Healing? -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter max-w-container-max mx-auto fade-in-section visible">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-center mb-12">Who Can Do Sound Healing?</h2>
+<div class="grid md:grid-cols-2 gap-12 mb-12">
+<ul class="space-y-6"><li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">Anyone feeling stressed or overwhelmed</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">Individuals dealing with anxiety or depression</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">Those looking to deepen their meditation practice</span>
+</li></ul>
+<ul class="space-y-6"><li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">People recovering from burnout</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">Anyone curious about holistic wellness</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">check_circle</span>
+<span class="text-secondary">Perfect for those who find it hard to sit in silence</span>
+</li></ul>
+</div>
+</div>
+</section>
+<!-- Instruments We Use -->
+<!-- What to Expect During a Session -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter max-w-container-max mx-auto fade-in-section visible">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">What to Expect During a Session</h2>
+<ol class="space-y-8">
+<li class="flex gap-6">
+<span class="text-primary-container font-headline-md text-3xl opacity-50">01</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Preparation</h4>
+<p class="text-secondary">You will lie down comfortably on a mat, supported by bolsters, pillows, and blankets to ensure total physical comfort.</p>
+</div>
+</li>
+<li class="flex gap-6">
+<span class="text-primary-container font-headline-md text-3xl opacity-50">02</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Guidance</h4>
+<p class="text-secondary">A short guided meditation or breathing exercise will help you settle into the space and set an intention.</p>
+</div>
+</li>
+<li class="flex gap-6">
+<span class="text-primary-container font-headline-md text-3xl opacity-50">03</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Sound Bath</h4>
+<p class="text-secondary">For 45–60 minutes, you will be immersed in a "bath" of sound as different instruments are played around you.</p>
+</div>
+</li>
+<li class="flex gap-6">
+<span class="text-primary-container font-headline-md text-3xl opacity-50">04</span>
+<div>
+<h4 class="font-bold text-lg mb-1">Return</h4>
+<p class="text-secondary">The session concludes with a period of silence followed by a gentle invitation to return to the present moment.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-fixed-dim/10 rounded-full blur-3xl"></div>
+<img alt="Sound healing session" class="relative rounded-xl shadow-2xl w-full aspect-square object-cover" src="Picture/Self.jpeg">
+</div>
+</div>
+</section><section class="py-section-padding-mobile md:py-section-padding-desktop px-gutter bg-surface-container-low fade-in-section visible">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-4">Our Sessions</h2>
+<p class="text-secondary font-body-md">Come alone, bring a friend, or bring the whole team</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Private Sessions -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">person</span>
+<h4 class="font-bold mb-2">Private Sessions</h4>
+<p class="text-on-surface-variant text-sm">A one-on-one experience, tailored entirely to your needs and intentions.</p>
+</div>
+<!-- Group Sessions -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">group</span>
+<h4 class="font-bold mb-2">Group Sessions</h4>
+<p class="text-on-surface-variant text-sm">Shared sound baths in an intimate, softly lit circle.</p>
+</div>
+<!-- Corporate Wellbeing -->
+<div class="bg-surface p-8 rounded-xl border border-outline-variant/30 flex flex-col items-center text-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">work</span>
+<h4 class="font-bold mb-2">Corporate Wellbeing</h4>
+<p class="text-on-surface-variant text-sm">Team sessions that help your workplace pause, reset, and refocus.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary text-on-primary py-section-padding-mobile md:py-section-padding-desktop px-gutter relative overflow-hidden">
+<div class="max-w-3xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg mb-6 leading-tight">Take a pause. Reset your nervous system. Return to yourself.</h2>
+<p class="text-body-lg mb-12 opacity-90 font-light max-w-2xl mx-auto">Experience the power of sound healing with Rooted Wellness and create space for rest, balance, and intentional well-being.</p>
+<a class="inline-block bg-surface text-primary px-12 py-5 rounded-full font-label-sm tracking-widest uppercase shadow-xl hover:scale-105 transition-all" href="https://wa.me/919272406156?text=Hi%20Maneesha!%20I%27d%20like%20to%20book%20a%20sound%20healing%20session." rel="noopener" target="_blank">
+                Book Your Session
+            </a>
+</div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 border border-surface/10 rounded-full"></div>
+<div class="absolute -top-40 -right-40 w-96 h-96 border border-surface/5 rounded-full"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high w-full py-16 border-t border-outline-variant/30">
+<div class="flex flex-col items-center text-center gap-8 px-gutter max-w-container-max mx-auto">
+<div class="max-w-xs">
+<div class="flex items-center justify-center gap-2 mb-6">
+
+<span class="font-headline-md text-xl tracking-tight text-primary">Rooted Wellness</span>
+</div>
+
+<div class="mb-8">
+    <h5 class="font-label-sm text-xs uppercase tracking-widest text-primary mb-4 font-bold ml-2">Contact Us</h5>
+    <div class="flex flex-col items-start max-w-fit mx-auto gap-2">
+        <a href="mailto:maneesha.nutritionist@gmail.com" class="flex items-center gap-4 text-primary hover:text-primary/80 transition-all duration-300 group">
+    <div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all">
+        <span class="material-symbols-outlined text-xl">mail</span>
+    </div>
+    <span class="text-sm font-body-md">maneesha.nutritionist@gmail.com</span>
+</a>
+        <a href="tel:+919272406156" class="flex items-center gap-4 text-primary hover:text-primary/80 transition-all duration-300 group">
+    <div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all">
+        <span class="material-symbols-outlined text-xl">call</span>
+    </div>
+    <span class="text-sm font-body-md">+91 9272406156</span>
+</a>
+        <a href="https://www.instagram.com/rootedwellnessby_maneesha" target="_blank" class="flex items-center gap-4 text-primary hover:text-primary/80 transition-all duration-300 group">
+    <div class="w-10 h-10 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-all">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+        </svg>
+    </div>
+    <span class="text-sm font-body-md">@rootedwellnessby_maneesha</span>
+</a>
+    </div>
+</div><p class="text-outline text-sm">© Rooted Wellness by Maneesha. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Simple Intersection Observer for fade-in animations
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
